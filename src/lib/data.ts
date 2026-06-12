@@ -85,6 +85,12 @@ export function getDailyStats(date: string) {
   };
 }
 
+export const timesheetEntries: Array<{task: string, hours: string, description: string, date: string}> = [];
+
+export function saveTimesheetEntry(entry: {task: string, hours: string, description: string, date: string}) {
+  timesheetEntries.push(entry);
+}
+
 export function getWeeklyStats() {
   const days = [];
   for (let i = 6; i >= 0; i--) {
